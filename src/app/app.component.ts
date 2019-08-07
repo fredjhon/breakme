@@ -19,7 +19,7 @@ export class AppComponent {
   key: string;
   date: Date = new Date();
   isRandomKey: boolean = true;
-  cicles: number = 2;
+  cicles: number = 2; //test
 
   resetDate(): void {
     this.date = new Date();
