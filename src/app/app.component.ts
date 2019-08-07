@@ -19,7 +19,7 @@ export class AppComponent {
   key: string;
   date: Date = new Date();
   isRandomKey: boolean = true;
-  cicles: number = 2; //testasdfad
+  cicles: number = 2; //asdfasdf
 
   resetDate(): void {
     this.date = new Date();
