@@ -1,0 +1,35 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+</div>
+
+Date <input type="datetime-local"  [ngModel]="date | date:'yyyy-MM-ddTHH:mm:ss'"
+   (ngModelChange)="setDate($event)" />
+
+<br>
+Text simple
+<br>
+<textarea rows="4" cols="50" name="msg" maxlength="500" [(ngModel)]="msg">
+</textarea>
+
+<br>
+<input type="button" value="new Date()" (click)="resetDate()">
+<input type="button" value="Cipher" (click)="cipher()">
+<input type="checkbox" [(ngModel)]="isRandomKey" (click)="setRandomKey($event.target.checked)"> Random Key
+<p></p>
+
+Message cipher:
+<br>
+<input type="text"  name="cipherMsg"  [(ngModel)]="cipherMsg">
+<br>
+key: <input type="text" name="key" [(ngModel)]="key">
+<input type="button" value="deCipher" (click)="decipher(cipherMsg, key)">
+
+<p></p>
+Message deCipher:
+<br>
+<textarea rows="4" cols="50" name="decipherMsg" maxlength="500" [(ngModel)]="decipherMsg">
+</textarea>
+
