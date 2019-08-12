@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100,400i&display=swap');
+
+
+body{
+    background-color: rgb(35, 0, 64);
+}
+
+.container{
+    color: white;
+}
+
+.title{
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+    font-size: 3em;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.wd{ flex: 0 0 20% !important}
+.pt5{ padding-top: 5px; }
+.mt{ margin-top: 50px; }
+.ml{ margin-left: 85px; }
+.ml1{ margin-left: 20px; }

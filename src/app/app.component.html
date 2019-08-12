@@ -1,35 +1,56 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
+<div class="container">
+
+
+  <div class="title">
     Welcome to {{title}}!
-  </h1>
+  </div>
+
+  <div class="form-group row">
+    <label for="date" class="col-1 col-form-label">Date</label>
+    <div class="col-3">
+      <input type="datetime-local" id="date" class="form-control" [ngModel]="date | date:'yyyy-MM-ddTHH:mm:ss'"
+        (ngModelChange)="setDate($event)" />
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col">
+      <label>Text simple</label>
+
+      <textarea class="form-control" rows="4" cols="50" name="msg" maxlength="500" [(ngModel)]="msg"></textarea>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-3 wd">
+      <input type="button" class="btn btn-dark" value="new Date()" (click)="resetDate()">
+      <input type="button" class="btn btn-dark ml1" value="Cipher" (click)="cipher()">
+    </div>
+    <div class="custom-control custom-checkbox pt5">
+      <input type="checkbox" id="checkbox" class="ml1 custom-control-input" [(ngModel)]="isRandomKey"
+        (click)="setRandomKey($event.target.checked)">
+      <label class="custom-control-label" for="checkbox">Random Key</label>
+    </div>
+  </div>
+
+  <div class="form-group row mt">
+    <label for="message" class="col-2 col-form-label">Message cipher</label>
+    <input type="text" class="form-control col-9" id="message" name="cipherMsg" [(ngModel)]="cipherMsg">
+  </div>
+
+  <div class="form-group row">
+    <label for="key" class="col-1 col-form-label">Key</label>
+    <input type="text" class="form-control col-9" name="key" [(ngModel)]="key">
+    <input type="button" class="btn btn-dark ml" value="deCipher" (click)="decipher(cipherMsg, key)">
+  </div>
+
+  <div class="form-group row mt">
+    <div class="col">
+      <label>Message deCipher</label>
+
+      <textarea class="form-control" rows="4" cols="50" name="decipherMsg" maxlength="500"
+        [(ngModel)]="decipherMsg"></textarea>
+    </div>
+  </div>
+
 </div>
-
-Date <input type="datetime-local"  [ngModel]="date | date:'yyyy-MM-ddTHH:mm:ss'"
-   (ngModelChange)="setDate($event)" />
-
-<br>
-Text simple
-<br>
-<textarea rows="4" cols="50" name="msg" maxlength="500" [(ngModel)]="msg">
-</textarea>
-
-<br>
-<input type="button" value="new Date()" (click)="resetDate()">
-<input type="button" value="Cipher" (click)="cipher()">
-<input type="checkbox" [(ngModel)]="isRandomKey" (click)="setRandomKey($event.target.checked)"> Random Key
-<p></p>
-
-Message cipher:
-<br>
-<input type="text"  name="cipherMsg"  [(ngModel)]="cipherMsg">
-<br>
-key: <input type="text" name="key" [(ngModel)]="key">
-<input type="button" value="deCipher" (click)="decipher(cipherMsg, key)">
-
-<p></p>
-Message deCipher:
-<br>
-<textarea rows="4" cols="50" name="decipherMsg" maxlength="500" [(ngModel)]="decipherMsg">
-</textarea>
-
